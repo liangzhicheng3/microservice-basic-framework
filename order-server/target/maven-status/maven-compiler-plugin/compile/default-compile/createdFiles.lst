@@ -1,0 +1,8 @@
+com\liangzhicheng\modules\controller\client\OrderClientController.class
+com\liangzhicheng\modules\service\impl\TestOrderServiceImpl.class
+com\liangzhicheng\common\utils\OrderNoUtil.class
+com\liangzhicheng\modules\feign\ITestProductFeignApi.class
+com\liangzhicheng\modules\service\ITestOrderService.class
+com\liangzhicheng\modules\feign\ITestUserFeignApi.class
+com\liangzhicheng\OrderApplication.class
+com\liangzhicheng\modules\dao\ITestOrderDao.class

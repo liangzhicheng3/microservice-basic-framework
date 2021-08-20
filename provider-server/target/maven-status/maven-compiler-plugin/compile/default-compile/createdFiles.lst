@@ -1,0 +1,4 @@
+com\liangzhicheng\modules\controller\ProviderController.class
+com\liangzhicheng\modules\service\impl\ProviderServiceImpl.class
+com\liangzhicheng\modules\service\IProviderService.class
+com\liangzhicheng\ProviderApplication.class

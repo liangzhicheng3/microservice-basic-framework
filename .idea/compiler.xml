@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="pay-server" />
+        <module name="elastic-server" />
+        <module name="consumer-server-02" />
+        <module name="consumer-server" />
+        <module name="entity-core" />
+        <module name="user-server" />
+        <module name="basic-core" />
+        <module name="product-server" />
+        <module name="gateway-server" />
+        <module name="area-server" />
+        <module name="order-server" />
+        <module name="provider-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="consumer-server-02" target="1.8" />
+      <module name="swagger-api" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="area-server" options="-parameters" />
+      <module name="basic-core" options="-parameters" />
+      <module name="consumer-server" options="-parameters" />
+      <module name="consumer-server-02" options="-parameters" />
+      <module name="elastic-server" options="-parameters" />
+      <module name="entity-core" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
+      <module name="order-server" options="-parameters" />
+      <module name="pay-server" options="-parameters" />
+      <module name="product-server" options="-parameters" />
+      <module name="provider-server" options="-parameters" />
+      <module name="swagger-api" options="-parameters" />
+      <module name="user-server" options="-parameters" />
+    </option>
+  </component>
+</project>

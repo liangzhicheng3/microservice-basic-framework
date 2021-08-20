@@ -1,0 +1,21 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: pay-service
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test-log?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Hongkong&useSSL=true
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+order-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #负载均衡策略

@@ -1,0 +1,8 @@
+com\liangzhicheng\modules\service\ITestAreaNameService.class
+com\liangzhicheng\modules\controller\client\AreaClientController.class
+com\liangzhicheng\AreaApplication.class
+com\liangzhicheng\modules\dao\ITestAreaNameDao.class
+com\liangzhicheng\modules\service\impl\TestAreaCodeServiceImpl.class
+com\liangzhicheng\modules\service\ITestAreaCodeService.class
+com\liangzhicheng\modules\dao\ITestAreaCodeDao.class
+com\liangzhicheng\modules\service\impl\TestAreaNameServiceImpl.class

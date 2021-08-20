@@ -1,0 +1,5 @@
+com\liangzhicheng\modules\dao\ITestProductDao.class
+com\liangzhicheng\modules\service\impl\TestProductServiceImpl.class
+com\liangzhicheng\modules\service\ITestProductService.class
+com\liangzhicheng\ProductApplication.class
+com\liangzhicheng\modules\controller\client\ProductClientController.class
