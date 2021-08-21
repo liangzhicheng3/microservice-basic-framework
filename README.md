@@ -4,7 +4,12 @@
 
 技术结构
 
-    SpringCloudAlibaba + SpringCloud Stream RabbitMQ + SpringBoot Data Elasticsearch + Redis + Mybatis Plus
+    SpringCloudAlibaba
+    SpringCloud Stream RabbitMQ
+    SpringBoot Data Elasticsearch
+    Redis
+    Shiro
+    Mybatis Plus
 
 项目结构
 
@@ -25,6 +30,7 @@
     修改各服务中的appliction.yml配置，包括数据库连接,RabbitMQ连接,Elasticsearch连接,Redis连接等
     需启动redis客户端(集成一些技术需要用到redis)
     需启动Nacos服务端(将服务注册到Nacos服务中心中;用到Nacos配置中心)
+    需启动RabbitMQ服务端(provider-server供应者服务与consumer-server消费者服务集成用到)
     需启动Elasticsearch PC端与服务端(PC端:Elasticsearch Head;服务端:Elasticsearch7.13.3)
     启动类:各服务中Application应用启动类
 
