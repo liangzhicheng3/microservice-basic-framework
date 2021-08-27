@@ -13,11 +13,15 @@
     <artifactId>provider-server</artifactId>
 
     <dependencies>
-        <!-- 引入entity-core模块 -->
+        <!-- spring mvc依赖 -->
         <dependency>
-            <groupId>com.liangzhicheng</groupId>
-            <artifactId>entity-core</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- nacos客户端 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
         <!-- spring cloud stream rabbitMQ依赖 -->
         <dependency>

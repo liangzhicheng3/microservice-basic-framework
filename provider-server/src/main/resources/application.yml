@@ -5,12 +5,6 @@ spring:
   application:
     name: provider-service
 
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/test-order?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Hongkong&useSSL=true
-    username: root
-    password: admin
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
   cloud:
     nacos:
       discovery:

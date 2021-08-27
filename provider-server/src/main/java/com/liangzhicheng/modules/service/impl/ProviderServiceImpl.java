@@ -1,6 +1,5 @@
 package com.liangzhicheng.modules.service.impl;
 
-import com.liangzhicheng.common.utils.SysToolUtil;
 import com.liangzhicheng.modules.service.IProviderService;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Source;
@@ -25,9 +24,9 @@ public class ProviderServiceImpl implements IProviderService {
      */
     @Override
     public void send() {
-        String uuid = SysToolUtil.generateId();
+        String uuid = "123456";
         output.send(MessageBuilder.withPayload(uuid).build());
-        SysToolUtil.error("provider send message:" + uuid);
+        System.out.println("provider send message:" + uuid);
     }
 
 }
