@@ -71,7 +71,7 @@ public class TestProductServiceImpl extends ServiceImpl<ITestProductDao, TestPro
     public void deleteProduct(TestProductDTO productDTO) {
         String productId = productDTO.getId();
         Optional<ElasticProductEntity> optionalProduct = elasticProductRepository.findById(productId);
-        if(SysToolUtil.isNull(optionalProduct) || SysToolUtil.isNull(optionalProduct.get())){
+        if(!optionalProduct.isPresent()){
             throw new CustomizeException(ApiConstant.BASE_FAIL_CODE, "获取远程elasticsearch调用商品信息不存在");
         }
         SysToolUtil.info("查询到{" + productId + "}号商品的信息,内容是:" + JSONObject.toJSONString(optionalProduct.get()));
@@ -131,7 +131,7 @@ public class TestProductServiceImpl extends ServiceImpl<ITestProductDao, TestPro
             throw new TransactionException(ApiConstant.PARAM_IS_NULL);
         }
         Optional<ElasticProductEntity> optionalProduct = elasticProductRepository.findById(productId);
-        if(SysToolUtil.isNull(optionalProduct) || SysToolUtil.isNull(optionalProduct.get())){
+        if(!optionalProduct.isPresent()){
             throw new CustomizeException(ApiConstant.BASE_FAIL_CODE, "获取远程elasticsearch调用商品信息不存在");
         }
         SysToolUtil.info("查询到{" + productId + "}号商品的信息,内容是:" + JSONObject.toJSONString(optionalProduct.get()));
