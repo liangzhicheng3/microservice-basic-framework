@@ -61,7 +61,7 @@ public class TestOrderEntity extends Model<TestOrderEntity> {
     private Integer buyNum;
 
     @Override
-    protected Serializable pkVal() {
+    public Serializable pkVal() {
         return null;
     }
 

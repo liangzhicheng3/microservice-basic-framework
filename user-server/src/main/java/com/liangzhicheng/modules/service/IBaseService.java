@@ -1,0 +1,12 @@
+package com.liangzhicheng.modules.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+
+/**
+ * @description 服务基类
+ * @author liangzhicheng
+ * @since 2021-09-12
+ */
+public interface IBaseService<T> extends IService<T> {
+
+}

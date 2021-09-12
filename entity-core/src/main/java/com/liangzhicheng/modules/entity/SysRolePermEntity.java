@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * @description 角色权限实体类
@@ -57,16 +57,16 @@ public class SysRolePermEntity extends Model<SysRolePermEntity> {
      * 创建时间
      */
     @TableField(fill = FieldFill.INSERT)
-    private LocalDateTime createDate;
+    private Date createDate;
 
     /**
      * 更新时间
      */
     @TableField(fill = FieldFill.INSERT_UPDATE)
-    private LocalDateTime updateDate;
+    private Date updateDate;
 
     @Override
-    protected Serializable pkVal() {
+    public Serializable pkVal() {
         return this.roleId;
     }
 

@@ -31,7 +31,7 @@
                 AND SUBSTRING(ac.area_id, 1, #{length}) = #{areaId}
             </if>
         </where>
-        LIMIT #{pageNo}, #{pageSize}
+        LIMIT #{pageNos}, #{pageSize}
     </select>
 
     <select id="getArea" resultType="java.util.Map">

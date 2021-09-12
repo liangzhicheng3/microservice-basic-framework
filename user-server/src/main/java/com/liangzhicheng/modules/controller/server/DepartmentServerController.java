@@ -12,6 +12,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,8 +36,7 @@ public class DepartmentServerController extends BaseController {
     @ApiOperation(value = "保存部门")
     @PostMapping(value = "/saveDept")
     @ApiOperationSupport(ignoreParameters = {"deptDTO.keyword",
-            "deptDTO.dateStart", "deptDTO.dateEnd",
-            "deptDTO.pageNo", "deptDTO.pageSize"})
+            "deptDTO.createDate", "deptDTO.pageNo", "deptDTO.pageSize"})
     public ResponseResult saveDept(@RequestBody SysDeptDTO deptDTO){
         deptService.saveDept(deptDTO);
         return buildSuccessInfo(null);
@@ -45,8 +45,8 @@ public class DepartmentServerController extends BaseController {
     @ApiOperation(value = "删除部门")
     @PostMapping(value = "/deleteDept")
     @ApiOperationSupport(ignoreParameters = {"deptDTO.keyword",
-            "deptDTO.dateStart", "deptDTO.dateEnd", "deptDTO.name",
-            "deptDTO.companyId", "deptDTO.companyName", "deptDTO.description",
+            "deptDTO.createDate", "deptDTO.name", "deptDTO.companyId",
+            "deptDTO.companyName", "deptDTO.description",
             "deptDTO.pageNo", "deptDTO.pageSize"})
     public ResponseResult deleteDept(@RequestBody SysDeptDTO deptDTO){
         deptService.deleteDept(deptDTO);
@@ -59,14 +59,15 @@ public class DepartmentServerController extends BaseController {
             "deptDTO.companyName", "deptDTO.description"})
     @ApiResponses({@ApiResponse(code = ApiConstant.BASE_SUCCESS_CODE, message = "成功",
             response = SysDeptVO.class)})
-    public ResponseResult listDept(@RequestBody SysDeptDTO deptDTO){
-        return buildSuccessInfo(deptService.listDept(deptDTO));
+    public ResponseResult listDept(@RequestBody SysDeptDTO deptDTO,
+                                   Pageable pageable){
+        return buildSuccessInfo(deptService.listDept(deptDTO, pageable));
     }
 
     @ApiOperation(value = "获取部门")
     @PostMapping(value = "/getDept")
-    @ApiOperationSupport(ignoreParameters = {"deptDTO.keyword", "deptDTO.dateStart",
-            "deptDTO.dateEnd", "deptDTO.name", "deptDTO.companyId", "deptDTO.companyName",
+    @ApiOperationSupport(ignoreParameters = {"deptDTO.keyword", "deptDTO.createDate",
+            "deptDTO.name", "deptDTO.companyId", "deptDTO.companyName",
             "deptDTO.description", "deptDTO.pageNo", "deptDTO.pageSize"})
     @ApiResponses({@ApiResponse(code = ApiConstant.BASE_SUCCESS_CODE, message = "成功",
             response = SysDeptDescVO.class)})

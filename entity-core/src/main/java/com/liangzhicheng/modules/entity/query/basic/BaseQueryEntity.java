@@ -36,7 +36,7 @@ public class BaseQueryEntity {
         this.pageSize = pageSize;
     }
 
-    public int getPageNo(){
+    public int getPageNos(){
         return (this.pageNo - 1) * pageSize;
     }
 

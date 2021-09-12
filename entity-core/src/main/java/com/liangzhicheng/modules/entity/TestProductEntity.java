@@ -50,7 +50,7 @@ public class TestProductEntity extends Model<TestProductEntity> {
     private Integer stock;
 
     @Override
-    protected Serializable pkVal() {
+    public Serializable pkVal() {
         return null;
     }
 

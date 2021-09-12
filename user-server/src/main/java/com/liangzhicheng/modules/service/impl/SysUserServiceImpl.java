@@ -313,10 +313,10 @@ public class SysUserServiceImpl extends ServiceImpl<ISysUserDao, SysUserEntity> 
                 throw new CustomizeException(ApiConstant.BASE_FAIL_CODE, "账号名称字数过长");
             }
             if(SysToolUtil.isBlank(id) || !user.getAccountName().equals(accountName)){
-                Integer count = baseMapper.selectCount(new LambdaQueryWrapper<SysUserEntity>()
+                Long count = baseMapper.selectCount(new LambdaQueryWrapper<SysUserEntity>()
                         .eq(SysUserEntity::getAccountName, accountName)
                         .eq(SysUserEntity::getDelFlag, Constants.ZERO));
-                if(count > 0){
+                if(count.intValue() > 0){
                     throw new CustomizeException(ApiConstant.BASE_FAIL_CODE, "账号已存在");
                 }
             }

@@ -6,7 +6,9 @@ import com.alibaba.druid.support.http.WebStatFilter;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.core.config.GlobalConfig;
-import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -82,16 +84,14 @@ public class DBConfig {
         if(resources != null){
             bean.setMapperLocations(resources);
         }
-        //分页插件
-        PaginationInterceptor pageInterceptor = new PaginationInterceptor();
-        pageInterceptor.setDialectType("mysql");
-        //SQL执行性能分析插件
-        /*PerformanceInterceptor performanceInterceptor = new PerformanceInterceptor();
-        performanceInterceptor.setMaxTime(10000);
-        performanceInterceptor.setFormat(true);*/
-        Interceptor[] interceptors = {pageInterceptor/*,performanceInterceptor*/};
+        //mybatis plus配置
+        MybatisPlusInterceptor mybatisPlusInterceptor = new MybatisPlusInterceptor();
+        //锁机制
+        mybatisPlusInterceptor.addInnerInterceptor(new OptimisticLockerInnerInterceptor());
+        //分页机制
+        mybatisPlusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor());
+        Interceptor[] interceptors = {mybatisPlusInterceptor};
         bean.setPlugins(interceptors);
-
         GlobalConfig config = new GlobalConfig();
         //插入数据字段预处理
         config.setMetaObjectHandler(new MyBatisPlusObjectHandler());

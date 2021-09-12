@@ -1,24 +1,26 @@
 package com.liangzhicheng.modules.service;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.liangzhicheng.modules.entity.SysDeptEntity;
 import com.liangzhicheng.modules.entity.dto.SysDeptDTO;
 import com.liangzhicheng.modules.entity.vo.SysDeptDescVO;
+import org.springframework.data.domain.Pageable;
+
+import java.util.Map;
 
 /**
  * @description 部门 服务类
  * @author liangzhicheng
  * @since 2021-08-09
  */
-public interface ISysDeptService extends IService<SysDeptEntity> {
+public interface ISysDeptService extends IBaseService<SysDeptEntity> {
 
     /**
      * @description 部门列表
      * @param deptDTO
+     * @param pageable
      * @return IPage
      */
-    IPage listDept(SysDeptDTO deptDTO);
+    Map<String, Object> listDept(SysDeptDTO deptDTO, Pageable pageable);
 
     /**
      * @description 获取部门
