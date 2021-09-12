@@ -1,6 +1,0 @@
-spring:
-  elasticsearch:
-    rest:
-      uris: localhost:9200
-      read-timeout: 30s
-      connection-timeout: 5s
